@@ -1,0 +1,212 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ---------- BACKGROUND ---------- */
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- VISIBILITY ---------- */
+#login-card {
+  display: block;
+}
+#dashboard-card {
+  display: none;
+  opacity: 1;
+}
+
+/* ---------- TOGGLE BUTTONS ---------- */
+.toggle-btns {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+.toggle-btns button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background: #f1f1f1;
+  font-weight: 600;
+}
+.toggle-btns button.active {
+  background: #ff4b2b;
+  color: #fff;
+}
+
+/* ---------- INPUTS ---------- */
+.card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+.card input:focus {
+  border-color: #ff4b2b;
+  outline: none;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 50px;
+  background: #ff4b2b;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+.btn-primary:hover {
+  background: #ff416c;
+  transform: scale(1.05);
+}
+
+/* ---------- DASHBOARD ---------- */
+#dashboard-card {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 420px;
+  min-height: 400px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 2rem;
+  color: #222;
+  font-weight: 500;
+  z-index: 10;
+}
+
+#dashboard-card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.bluetooth-section {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bluetooth-section h3 {
+  font-size: 1rem;
+  color: #ff4b2b;
+  margin-bottom: 0.75rem;
+}
+
+.device-item {
+  border: none;
+  background: #f8f8f8;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.device-item:hover {
+  background: #ffe2da;
+  transform: translateX(6px);
+}
+
+/* ---------- DASHBOARD BUTTONS ---------- */
+#dashboard-card .btn-primary {
+  width: 80%;
+  border-radius: 50px;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+#connect-new {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+#get-started {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+}
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

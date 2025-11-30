@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Tunes</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h2 class="logo">Wave<br>Tunes</h2>
+
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#instructions">How It Works</a>
+            <a href="#about">About</a>
+            <a href="/login/" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- ---------------- HERO ---------------- -->
+    <section id="home" class="hero">
+        <video autoplay muted loop class="bg-video">
+            <source src="{% static 'media/bg.mp4' %}" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Control Music with Your<br>Hands</h1>
+            <p>Wave Tunes lets you play, pause, and skip songs using hand gestures — powered by AI!</p>
+            <a href="/login/" class="get-started">Get Started</a>
+        </div>
+    </section>
+
+    <!-- ---------------- FEATURES ---------------- -->
+    <section id="features" class="features-section">
+        <h2>Why Choose Wave Tunes?</h2>
+
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fa-solid fa-music feature-icon"></i>
+                <h3>Gesture-Based Control</h3>
+                <p>Control your favorite tracks with simple hand gestures like play, pause, next, and previous.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-solid fa-camera feature-icon"></i>
+                <h3>Real-Time Camera</h3>
+                <p>Wave Tunes uses your webcam to detect hand gestures in real-time with high accuracy.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-solid fa-gear feature-icon"></i>
+                <h3>AI Powered</h3>
+                <p>Built with TensorFlow and OpenCV for smooth and intelligent gesture recognition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------- HOW TO USE ---------------- -->
+    <section id="instructions" class="instructions-section">
+        <h2>How to Use</h2>
+        <p class="subtitle">Follow these simple steps to enjoy hands-free music control!</p>
+
+        <img src="{% static 'media/gestures.png' %}" class="gesture-image">
+
+        <ul class="use-list">
+            <li>🖐 Open palm → Play</li>
+            <li>👉 Swipe right → Next track</li>
+            <li>👈 Swipe left → Previous track</li>
+            <li>✊ Fist → Pause</li>
+            <li>👍 Thumbs_up → Volume Up</li>
+            <li>👎 Thumbs_Down → Volume Down</li>
+            <li>👌 Okay → Mute/Unmute</li>
+        </ul>
+
+        <p class="camera-warning">Make sure your camera is enabled before starting!</p>
+    </section>
+
+    <!-- ---------------- ABOUT ---------------- -->
+    <section id="about" class="about-section">
+        <h2>About Wave Tunes</h2>
+
+        <p>
+            Wave Tunes is an AI-powered project built by passionate developers who love music and machine
+            learning. It combines computer vision and gesture recognition to give you a futuristic, hands-free
+            experience.
+        </p>
+    </section>
+
+    <!-- ---------------- FOOTER ---------------- -->
+    <footer class="footer">
+        © 2025 Wave Tunes | Made with ❤️ using Django & TensorFlow
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
