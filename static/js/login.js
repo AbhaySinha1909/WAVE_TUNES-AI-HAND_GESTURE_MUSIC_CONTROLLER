@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const BASE_URL = "http://127.0.0.1:8000/api/users/";
+    const BASE_URL = "/api/users/";
 
     // Elements
     const loginBtn = document.getElementById("login-btn");
