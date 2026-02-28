@@ -1,3 +1,14 @@
+let model;
+let isModelLoaded = false;
+
+async function loadModel() {
+    model = await tf.loadLayersModel('/static/model/model.json');
+    console.log("Model loaded successfully!");
+    isModelLoaded = true;
+}
+
+loadModel();
+
 console.log("Gesture detector loaded.");
 
 // === Stabilization Variables ===
@@ -50,6 +61,21 @@ function onResults(results) {
       const now = Date.now();
       if (now - lastTriggerTime > TRIGGER_COOLDOWN) {
         lastTriggerTime = now;
+
+        // === ML Prediction Layer ===
+        if (isModelLoaded) {
+          let img = tf.browser.fromPixels(video)
+            .resizeNearestNeighbor([224, 224])
+            .toFloat()
+            .div(255.0)
+            .expandDims();
+
+          let prediction = model.predict(img);
+          let index = prediction.argMax(1).dataSync()[0];
+
+          console.log("ML Model Prediction:", index);
+        }
+
         console.log("✔ Stabilized:", gesture);
         showGestureOverlay(gesture);
         handleGesture(gesture);

@@ -33,8 +33,9 @@ Thumbs.db
 *.ckpt
 *.checkpoint
 
-# KEEP these (don’t ignore):
-!backend/static/
-!backend/templates/
-!backend/gestures/ml/keras_model.h5
-!backend/gestures/ml/labels.txt
+# Allow trained model for proof
+!gestures/ml/keras_model.h5
+!gestures/ml/labels.txt
+
+# Allow TF.js converted model
+!static/model_tfjs/
